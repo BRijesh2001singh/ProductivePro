@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { toast } from 'react-toastify';
 import { DragDropContext, Draggable, Droppable } from 'react-beautiful-dnd';
-
+import { Howl, Howler } from 'howler';
+import successsound from '../sounds/success-1-6297.mp3'
 // get list data from local storage
 const getLocalList = () => {
     let tasklist = localStorage.getItem('Task-list');
@@ -36,7 +37,6 @@ const Todo = () => {
 
         setList([...list, task]);
         setTask('');
-        toast.success('Task added!');
     };
 
     const deleteTask = (index) => {
@@ -50,7 +50,18 @@ const Todo = () => {
         const updatedList = [...list];
         updatedList.splice(index, 1);
         setList(updatedList);
-        toast.success(`Well Done! ${list.length - 1} remaining tasks`);
+        if (list.length - 1 === 0) {
+            const sound = new Howl({
+                src: [successsound],
+                volume: 2.0,
+            });
+            console.log(sound);
+            sound.play();
+            toast.success(`All tasks completed`);
+        }
+        else {
+            toast.success(`Well Done! ${list.length - 1} remaining tasks`);
+        }
         setcompleted(completed + 1);
     };
     //reseting taskcompleted
@@ -92,7 +103,7 @@ const Todo = () => {
                     <i className='fas fa-plus add-btn' onClick={addTask} title='Add Item'></i>
                 </div>
                 <div className='achievements'><span>You have completed {completed} tasks</span>
-                    <i class="fa fa-refresh" aria-hidden="true" onClick={resetcomplete} title='Reset completed tasks'></i>
+                    <i className="fa fa-refresh" aria-hidden="true" onClick={resetcomplete} title='Reset completed tasks'></i>
                 </div>
                 <div className='show-items'>
                     <DragDropContext onDragEnd={onDragEnd}>
