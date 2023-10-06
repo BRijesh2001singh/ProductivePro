@@ -1,0 +1,102 @@
+/* PomodoroTimer.css */
+.main-pomo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    animation: pulsate 10s infinite alternate;
+    border-radius: 30px;
+
+}
+
+@keyframes pulsate {
+    0% {
+        box-shadow: 0 0 40px rgba(255, 0, 0, 0.5);
+        /* Red glow */
+    }
+
+    25% {
+        box-shadow: 0 0 40px rgba(15, 168, 215, 0.5);
+        /* Green glow */
+    }
+
+    50% {
+        box-shadow: 0 0 40px rgba(0, 0, 255, 0.5);
+        /* Blue glow */
+    }
+
+    75% {
+        box-shadow: 0 0 40px rgba(172, 24, 24, 0.5);
+        /* Yellow glow */
+    }
+
+    100% {
+        box-shadow: 0 0 40px rgba(25, 155, 188, 0.5);
+        /* Magenta glow */
+    }
+}
+
+.pomodoro-timer {
+    display: flex;
+    justify-content: center;
+    width: 350px;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid black;
+    background-color: transparent;
+    border-radius: 30px;
+}
+
+.pomo-h {
+    color: white;
+}
+
+.show-time {
+    font-size: 30px;
+    margin: 0;
+    color: white;
+    padding: 10px;
+}
+
+button {
+    font-size: 16px;
+    margin: 5px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+div>label {
+    font-size: 15;
+    margin-right: 10px;
+
+}
+
+input[type="number"] {
+    font-size: 14px;
+    padding: 0;
+    width: 40px;
+    border: 1px solid white;
+    border-radius: 5px;
+}
+
+.set-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.toggle-time {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+}

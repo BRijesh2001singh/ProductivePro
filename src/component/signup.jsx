@@ -18,6 +18,8 @@ const SignUpForm = (props) => {
   }
   useEffect(() => {
     seterror("");
+
+
   }, [email, password]);
 
   return (

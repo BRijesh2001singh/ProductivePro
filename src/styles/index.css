@@ -37,7 +37,7 @@ body::-webkit-scrollbar {
 .child-div>span {
   font-size: 50px;
   font-weight: bolder;
-  margin-top: 100px;
+  margin-top: 50px;
   margin-bottom: 20px;
   color: white;
 }
@@ -230,4 +230,11 @@ body::-webkit-scrollbar {
   color: white;
   font-weight: bold;
   margin-left: 10px;
+}
+
+.home-dis {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
 }

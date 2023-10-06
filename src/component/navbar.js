@@ -38,6 +38,7 @@ const Navbar = () => {
                 <div className='welcome'>
                     <h1>👋Welcome,{user.email.split("@")[0]}</h1>
                     <span className='quotes'>{quotes}</span>
+                    <Link to='/pomodro'>PomodoroTimer</Link>
                 </div>
                 <div className='profile'>
                     <i className="fa fa-user profile-in-icon" aria-hidden="true"></i>
