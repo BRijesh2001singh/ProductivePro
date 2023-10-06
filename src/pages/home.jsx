@@ -11,7 +11,9 @@ const Home = () => {
         <header>
           <Navbar />
         </header>
-        <div className='home-dis'> <PomodoroTimer />
+
+        <div className='home-dis'>
+          <PomodoroTimer />
           <Todo />
         </div>
 

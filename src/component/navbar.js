@@ -22,11 +22,9 @@ const Navbar = () => {
     useEffect(() => {
         onAuthStateChanged(auth, user => {
             if (user) {
-                console.log('hello', user);
                 setuser(user)
             }
             else {
-                console.log('yOU ARE LOGGED OUT');
                 setuser(null)
             }
         })
@@ -38,7 +36,6 @@ const Navbar = () => {
                 <div className='welcome'>
                     <h1>👋Welcome,{user.email.split("@")[0]}</h1>
                     <span className='quotes'>{quotes}</span>
-                    <Link to='/pomodro'>PomodoroTimer</Link>
                 </div>
                 <div className='profile'>
                     <i className="fa fa-user profile-in-icon" aria-hidden="true"></i>

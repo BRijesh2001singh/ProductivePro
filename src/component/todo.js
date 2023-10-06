@@ -55,7 +55,6 @@ const Todo = () => {
                 src: [successsound],
                 volume: 2.0,
             });
-            console.log(sound);
             sound.play();
             toast.success(`All tasks completed`);
         }

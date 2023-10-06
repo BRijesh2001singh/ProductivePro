@@ -1,12 +1,13 @@
 /* PomodoroTimer.css */
 .main-pomo {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     margin-top: 50px;
     animation: pulsate 10s infinite alternate;
     border-radius: 30px;
-
+    width: 300px;
+    height: 500px;
 }
 
 @keyframes pulsate {
@@ -42,7 +43,7 @@
     width: 350px;
     align-items: center;
     flex-direction: column;
-    border: 1px solid black;
+
     background-color: transparent;
     border-radius: 30px;
 }
