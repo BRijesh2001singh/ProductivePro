@@ -44,8 +44,7 @@ function PomodoroTimer() {
 
     const handleStartStop = () => {
         setIsRunning((prevIsRunning) => !prevIsRunning);
-        if (!isRunning)
-            setTimer(workTime * 60);
+
     };
 
     const handleReset = () => {
@@ -59,11 +58,11 @@ function PomodoroTimer() {
         <div className='main-pomo'>
             <div className="pomodoro-timer">
                 <div className='set-div'>
-                    <h1 className='pomo-h'>{isWorkingRef.current ? 'Work Time' : 'Rest Time'}</h1>
                     <p className='show-time'>{`${Math.floor(timer / 60)}:${(timer % 60)
                         .toString()
                         .padStart(2, '0')}`}</p>
                 </div>
+                <h1 className='pomo-h'>{isWorkingRef.current ? 'Work Time' : 'Rest Time'}</h1>
                 <div className='timer-show-div'>
                     <div className='timer-btns'>
                         <button onClick={handleStartStop}>{isRunning ? 'Pause' : 'Start'}</button>

@@ -1,8 +1,7 @@
 .logincontainer {
     font-family: sans-serif;
     text-align: center;
-    background: rgb(7, 7, 44);
-
+    background-image: url('../images/login1.gif');
     display: flex;
     justify-content: center;
     align-items: center;
@@ -71,7 +70,7 @@ button.ghost {
 }
 
 form {
-    background-color: #ffffff;
+    background-color: #c3dcff;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -162,7 +161,7 @@ input {
 }
 
 .overlay {
-    background: rgb(10, 10, 158);
+    background: rgb(6, 68, 123);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 0 0;

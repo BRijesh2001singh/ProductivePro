@@ -33,6 +33,7 @@ const Navbar = () => {
     if (user !== null) {
         return (
             <div className='nav-container'>
+
                 <div className='welcome'>
                     <h1>👋Welcome,{user.email.split("@")[0]}</h1>
                     <span className='quotes'>{quotes}</span>

@@ -4,37 +4,11 @@
     justify-content: flex-start;
     align-items: center;
     margin-top: 50px;
-    animation: pulsate 10s infinite alternate;
     border-radius: 30px;
     width: 300px;
-    height: 500px;
-}
-
-@keyframes pulsate {
-    0% {
-        box-shadow: 0 0 40px rgba(255, 0, 0, 0.5);
-        /* Red glow */
-    }
-
-    25% {
-        box-shadow: 0 0 40px rgba(15, 168, 215, 0.5);
-        /* Green glow */
-    }
-
-    50% {
-        box-shadow: 0 0 40px rgba(0, 0, 255, 0.5);
-        /* Blue glow */
-    }
-
-    75% {
-        box-shadow: 0 0 40px rgba(172, 24, 24, 0.5);
-        /* Yellow glow */
-    }
-
-    100% {
-        box-shadow: 0 0 40px rgba(25, 155, 188, 0.5);
-        /* Magenta glow */
-    }
+    height: 300px;
+    box-shadow: 0 0 50px black;
+    position: fixed;
 }
 
 .pomodoro-timer {
@@ -43,19 +17,26 @@
     width: 350px;
     align-items: center;
     flex-direction: column;
-
     background-color: transparent;
     border-radius: 30px;
 }
 
 .pomo-h {
+
+    font-weight: bolder;
+    letter-spacing: 2px;
     color: white;
 }
 
 .show-time {
-    font-size: 30px;
+    font-size: 60px;
     margin: 0;
     color: white;
+    -webkit-text-fill-color: white;
+    /* Will override color (regardless of order) */
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: rgb(0, 0, 0)e;
+    font-weight: bolder;
     padding: 10px;
 }
 

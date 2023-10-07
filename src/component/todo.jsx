@@ -20,6 +20,10 @@ const gettaskcounter = () => {
     }
     else return 0;
 }
+const showhelp = () => {
+    toast.info("HEY!You can drag and arrange tasks based on your priority");
+}
+showhelp();
 const Todo = () => {
     const [task, setTask] = useState('');
     const [list, setList] = useState(getLocalList());
@@ -53,7 +57,7 @@ const Todo = () => {
         if (list.length - 1 === 0) {
             const sound = new Howl({
                 src: [successsound],
-                volume: 2.0,
+                volume: 1,
             });
             sound.play();
             toast.success(`All tasks completed`);
@@ -83,16 +87,7 @@ const Todo = () => {
 
         setList(reorderedList);
     };
-    const showhelp = () => {
-        toast.info("HEY!You can drag and arrange tasks based on your priority");
-    }
-    useEffect(() => {
-        setTimeout(() => {
-            if (list.length === 0) {
-                showhelp();
-            }
-        }, 2000)
-    }, [])
+
     return (
         <div className='main-div'>
             <div className='child-div'>
