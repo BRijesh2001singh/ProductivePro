@@ -8,8 +8,6 @@ body {
   height: 100vh;
   margin: 0;
   padding: 0;
-  background-color: rgba(0, 0, 0, .7);
-  background-image: url(../images/image.jpg);
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -17,7 +15,6 @@ body {
   /*hide scrollbar for IE and Edge */
   scrollbar-width: none;
 }
-
 
 body::-webkit-scrollbar {
   display: none;
@@ -67,6 +64,7 @@ body::-webkit-scrollbar {
   letter-spacing: 2px;
   font-size: 20px;
   font-family: 'Courier New', Courier, monospace;
+  margin-right: 50px;
 }
 
 .add-items {
@@ -105,7 +103,6 @@ body::-webkit-scrollbar {
 
 .show-items {
   margin-top: 10px;
-
 }
 
 .btn {
@@ -144,7 +141,6 @@ body::-webkit-scrollbar {
   word-wrap: break-word;
   transform: scale(1);
   transition: transform .6ms ease;
-
 }
 
 .each-item:hover {
@@ -178,7 +174,6 @@ body::-webkit-scrollbar {
   color: white;
   font-weight: bolder;
   text-shadow: 0 0 10px white;
-
 }
 
 .welcome {
@@ -189,7 +184,6 @@ body::-webkit-scrollbar {
 
 .profile {
   color: red;
-
   margin-top: 10px;
   margin-right: 60px;
   padding: 15px;
@@ -210,7 +204,7 @@ body::-webkit-scrollbar {
   }
 
   50% {
-    box-shadow: 0 0 20px rgba(0, 0, 255, 0.5);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
     /* Blue glow */
   }
 
@@ -220,7 +214,7 @@ body::-webkit-scrollbar {
   }
 
   100% {
-    box-shadow: 0 0 20px rgba(40, 8, 122, 0.5);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
     /* Magenta glow */
   }
 }
@@ -280,5 +274,12 @@ body::-webkit-scrollbar {
 .setting:hover {
   background-color: black;
   color: white;
+}
 
+.visible {
+  display: flex;
+}
+
+.hidden {
+  display: none;
 }

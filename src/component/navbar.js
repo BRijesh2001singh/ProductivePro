@@ -4,12 +4,13 @@ import { Link } from 'react-router-dom';
 import { app } from '../context/firebase';
 import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
 const auth = getAuth(app);
+const quotesurl = 'https://api.quotable.io/random'
 const Navbar = () => {
     const [quotes, setquotes] = useState("");
     const [user, setuser] = useState(null);
     useEffect(() => {  //getting quotes
         const dailyquote = async () => {
-            await axios.get('https://api.quotable.io/random').then(Response => {
+            await axios.get(quotesurl).then(Response => {
                 const { content } = Response.data;
                 setquotes(content);
             }).catch(error => {

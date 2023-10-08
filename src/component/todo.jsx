@@ -30,9 +30,10 @@ const Todo = () => {
     const [completed, setcompleted] = useState(gettaskcounter);
 
     const handleInput = (e) => {
+        task.trim();
+        console.log(task)
         setTask(e.target.value);
     };
-
     const addTask = () => {
         if (task === '') {
             toast.error('Please enter a task before adding it.');

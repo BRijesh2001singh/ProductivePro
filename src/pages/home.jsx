@@ -1,29 +1,45 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Todo from './../component/todo';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'
 import Navbar from './../component/navbar';
 import PomodoroTimer from '../component/pomodro';
-const Home = () => {
+import darkbgimg from '../images/image.jpg'
+import lightbgimg from '../images/lightbg.jpg';
+const Home = (props) => {
   const [settings, setsettings] = useState(false)
-  const [display, setdisplay] = useState("Setting");
+  const [display, setdisplay] = useState("Pomodro Timer");
+  const [darkmode, setdarkmode] = useState('true');
+  const [bgimage, setbgimage] = useState(`${darkbgimg}`);
   const showsettings = () => {
     setsettings(!settings);
-    if (display === "Setting")
+    if (display === "Pomodro Timer")
       setdisplay("Show Tasks");
-    else setdisplay("Setting");
+    else setdisplay("Pomodro Timer");
   }
+  const tododisplay = settings ? "hidden" : "visible";
+  const timersplay = settings ? "visible" : "hidden";
+  //changing dark/lightmode
+  const changemode = () => {
+    setbgimage({ lightbgimg });
+    console.log(bgimage);
+    setdarkmode('false');
+  }
+  useEffect(() => {
+    document.body.style.backgroundImage = `url(${bgimage})`;
+  }, [bgimage])
+
   return (
     <>
       <div>
         <header>
-          <Navbar />
+          <Navbar mode={darkmode} />
         </header>
-        <button className="setting" onClick={showsettings}><i class="fa fa-cog" aria-hidden="true"></i>{display}</button>
+        <button className="setting" onClick={showsettings}><i className="fa fa-cog" aria-hidden="true"></i>{display}</button>
         <div className='home-dis'>
-          {settings ? <PomodoroTimer /> : <Todo />}
+          <div className={tododisplay}><Todo mode={darkmode} /></div>
+          <div className={timersplay}><PomodoroTimer mode={darkmode} /></div>
         </div>
-
       </div>
       <div>
         <ToastContainer
@@ -41,5 +57,4 @@ const Home = () => {
     </>
   )
 }
-
 export default Home;

@@ -1,20 +1,19 @@
 /* PomodoroTimer.css */
 .main-pomo {
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     margin-top: 50px;
     border-radius: 30px;
-    width: 300px;
+    width: 600px;
     height: 300px;
     box-shadow: 0 0 50px black;
-    position: fixed;
 }
 
 .pomodoro-timer {
     display: flex;
     justify-content: center;
-    width: 350px;
+    width: 500px;
     align-items: center;
     flex-direction: column;
     background-color: transparent;
@@ -52,6 +51,7 @@ button {
 
 button:hover {
     background-color: #0056b3;
+    border: none;
 }
 
 div>label {

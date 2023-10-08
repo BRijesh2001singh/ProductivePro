@@ -15,10 +15,20 @@ function PomodoroTimer() {
         src: [timerEndSound],
         preload: true,
     });
+    const settingwork = (e) => {
+        const inputValue = parseInt(e.target.value);
+        if (!isNaN(inputValue) && inputValue >= 1) {
+            setWorkTime(inputValue);
+        } else {
+            setWorkTime("");
+        }
+    }
+    // Separate the timer logic from the effect
+    useEffect(() => {
+        setTimer(isWorkingRef.current ? workTime * 60 : restTime * 60);
+    }, [workTime, restTime]);
 
     useEffect(() => {
-        isWorkingRef.current = !isWorkingRef.current;
-
         if (isRunning) {
             const intervalId = setInterval(() => {
                 setTimer((prevTimer) => {
@@ -28,7 +38,7 @@ function PomodoroTimer() {
                         // Play the audio when the work timer ends
                         sound.play();
 
-                        return isWorkingRef.current ? restTime * 60 : workTime * 60;
+                        return isWorkingRef.current ? workTime * 60 : restTime * 60;
                     } else {
                         return prevTimer - 1;
                     }
@@ -44,7 +54,6 @@ function PomodoroTimer() {
 
     const handleStartStop = () => {
         setIsRunning((prevIsRunning) => !prevIsRunning);
-
     };
 
     const handleReset = () => {
@@ -72,9 +81,10 @@ function PomodoroTimer() {
                         <div>
                             <label>Work Time (minutes):</label>
                             <input
+                                min={1}
                                 type="number"
                                 value={workTime}
-                                onChange={(e) => setWorkTime(parseInt(e.target.value))}
+                                onChange={settingwork}
                             />
                         </div>
                         <div>
@@ -82,6 +92,7 @@ function PomodoroTimer() {
                             <input
                                 type="number"
                                 value={restTime}
+                                min={1}
                                 onChange={(e) => setRestTime(parseInt(e.target.value))}
                             />
                         </div>
