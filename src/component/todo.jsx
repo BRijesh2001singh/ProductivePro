@@ -4,6 +4,14 @@ import { DragDropContext, Draggable, Droppable } from 'react-beautiful-dnd';
 import { Howl, Howler } from 'howler';
 import successsound from '../sounds/success-1-6297.mp3'
 // get list data from local storage
+
+function isAlphanumeric(str) {
+    for (let i = 0; i < str.length; i++) {
+        if (str[i] != ' ') return true;
+    }
+    return false;
+}
+
 const getLocalList = () => {
     let tasklist = localStorage.getItem('Task-list');
     if (tasklist) {
@@ -35,7 +43,7 @@ const Todo = () => {
         setTask(e.target.value);
     };
     const addTask = () => {
-        if (task === '') {
+        if (task === '' || !isAlphanumeric(task)) {
             toast.error('Please enter a task before adding it.');
             return;
         }
