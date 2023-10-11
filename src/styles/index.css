@@ -26,7 +26,6 @@ body::-webkit-scrollbar {
   align-items: center;
   height: auto;
   width: auto;
-  position: relative;
 }
 
 .child-div {
@@ -151,7 +150,8 @@ body::-webkit-scrollbar {
 .showbtns>.btn1 {
   margin-right: 20px;
   color: green;
-  font-size: 25px;
+  font-size: 30px;
+  font-weight: bolder;
 }
 
 .showbtns>.btn2 {
@@ -263,7 +263,7 @@ body::-webkit-scrollbar {
 }
 
 .setting {
-  padding: 10px;
+  padding: 5px;
   background-color: white;
   border: none;
   margin-top: 10px;
@@ -282,4 +282,20 @@ body::-webkit-scrollbar {
 
 .hidden {
   display: none;
+}
+
+.dis-set {
+  display: flex;
+  flex-direction: row;
+  height: 40px;
+}
+
+.setting>a:hover {
+  color: white;
+}
+
+.setting-icon {
+  width: 30px;
+  height: 30px;
+
 }

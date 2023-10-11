@@ -12,14 +12,12 @@ const SignUpForm = (props) => {
       seterror("Email or Password cannot be empty.")
       return null;
     }
-    createUserWithEmailAndPassword(auth, email, password).then(value => alert('success')).catch((error) => {
+    createUserWithEmailAndPassword(auth, email, password).then(value => alert('Account Created')).catch((error) => {
       seterror("Email already in use!")
     });
   }
-  useEffect(() => {
+  useEffect(() => {//to remove error message when there is change in password or email
     seterror("");
-
-
   }, [email, password]);
 
   return (

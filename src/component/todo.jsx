@@ -4,14 +4,6 @@ import { DragDropContext, Draggable, Droppable } from 'react-beautiful-dnd';
 import { Howl, Howler } from 'howler';
 import successsound from '../sounds/success-1-6297.mp3'
 // get list data from local storage
-
-function isAlphanumeric(str) {
-    for (let i = 0; i < str.length; i++) {
-        if (str[i] != ' ') return true;
-    }
-    return false;
-}
-
 const getLocalList = () => {
     let tasklist = localStorage.getItem('Task-list');
     if (tasklist) {
@@ -20,6 +12,15 @@ const getLocalList = () => {
         return [];
     }
 };
+//space check
+function isAlphanumeric(str) {
+    for (let i = 0; i < str.length; i++) {
+        if (str[i] !== ' ') return true;
+    }
+    return false;
+}
+
+
 //get completed  data from local storeage
 const gettaskcounter = () => {
     let counter = localStorage.getItem('taskcounter');
@@ -38,8 +39,6 @@ const Todo = () => {
     const [completed, setcompleted] = useState(gettaskcounter);
 
     const handleInput = (e) => {
-        task.trim();
-        console.log(task)
         setTask(e.target.value);
     };
     const addTask = () => {
