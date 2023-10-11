@@ -299,3 +299,20 @@ body::-webkit-scrollbar {
   height: 30px;
 
 }
+
+.tools {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ytframe>form {
+  background-color: rgba(0, 0, 0, 0);
+  box-shadow: 0 0 30px rgb(0, 0, 0);
+  border-radius: 30px;
+}
+
+.ytframe>h1 {
+  color: white;
+}

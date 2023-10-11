@@ -6,17 +6,19 @@ import Navbar from './../component/navbar';
 import PomodoroTimer from '../component/pomodro';
 import darkbgimg from '../images/image.jpg'
 import lightbgimg from '../images/lightbg.jpg';
+import { Link } from 'react-router-dom';
+import Playmusic from './playmusic';
 const Home = (props) => {
   const [settings, setsettings] = useState(false)
-  const [display, setdisplay] = useState("Pomodro Timer");
+  const [display, setdisplay] = useState("Focus Tools");
   const [darkmode, setdarkmode] = useState('true');
   const [bgimage, setbgimage] = useState(`${darkbgimg}`);
   const [settingdisplay, setsettingdisplay] = useState('hidden');
   const showtimer = () => {
     setsettings(!settings);
-    if (display === "Pomodro Timer")
+    if (display === "Focus Tools")
       setdisplay("Show Tasks");
-    else setdisplay("Pomodro Timer");
+    else setdisplay("Focus Tools");
   }
   const showsetting = () => {
     if (settingdisplay === 'hidden')
@@ -24,7 +26,9 @@ const Home = (props) => {
     else setsettingdisplay('hidden');
   }
   const tododisplay = settings ? "hidden" : "visible";
-  const timersplay = settings ? "visible" : "hidden";
+  const toolsdisplay = settings ? "visible" : "hidden";
+
+
   //changing dark/lightmode
   const changemode = () => {
     setbgimage({ lightbgimg });
@@ -38,13 +42,12 @@ const Home = (props) => {
     <>
       <div>
         <header>
-          <Navbar mode={darkmode} />
+          <Navbar />
         </header>
         <div className='dis-set'>
           <button className="setting setting-icon" onClick={showsetting}><i className="fa fa-cog" aria-hidden="true"></i></button>
           <div className={`${settingdisplay}`}>
             <button className='setting' onClick={showtimer}>{display}</button>
-            <button className='setting' onClick={showtimer}>Play Music</button>
             <button className='setting'><a href='https://chrome.google.com/webstore/detail/block-site-ex/nnkkgbabjapocnoedeaifoimlbejjckj/related' rel='noreferrer' target='_blank' style={{
               fontSize: "13px",
               fontWeight: "bold",
@@ -52,8 +55,13 @@ const Home = (props) => {
           </div>
         </div>
         <div className='home-dis'>
-          <div className={tododisplay}><Todo mode={darkmode} /></div>
-          <div className={timersplay}><PomodoroTimer mode={darkmode} /></div>
+          <div className={tododisplay}><Todo /></div>
+          <div className={`${toolsdisplay}`}>
+            <div className='tools'>
+              <div className=''><PomodoroTimer /></div>
+              <div ><Playmusic /></div>
+            </div>
+          </div>
         </div>
       </div>
       <div>

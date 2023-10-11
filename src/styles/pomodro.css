@@ -8,6 +8,7 @@
     width: 600px;
     height: 300px;
     box-shadow: 0 0 50px black;
+    margin-right: 150px;
 }
 
 .pomodoro-timer {
