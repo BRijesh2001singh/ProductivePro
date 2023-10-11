@@ -5,15 +5,14 @@ import 'react-toastify/dist/ReactToastify.css'
 import Navbar from './../component/navbar';
 import PomodoroTimer from '../component/pomodro';
 import darkbgimg from '../images/image.jpg'
-import lightbgimg from '../images/lightbg.jpg';
-import { Link } from 'react-router-dom';
 import Playmusic from './playmusic';
 const Home = (props) => {
   const [settings, setsettings] = useState(false)
   const [display, setdisplay] = useState("Focus Tools");
-  const [darkmode, setdarkmode] = useState('true');
   const [bgimage, setbgimage] = useState(`${darkbgimg}`);
   const [settingdisplay, setsettingdisplay] = useState('hidden');
+  console.log("hello")
+  console.log(process.env.REACT_APP_FIREBASE_API)
   const showtimer = () => {
     setsettings(!settings);
     if (display === "Focus Tools")
@@ -27,14 +26,6 @@ const Home = (props) => {
   }
   const tododisplay = settings ? "hidden" : "visible";
   const toolsdisplay = settings ? "visible" : "hidden";
-
-
-  //changing dark/lightmode
-  const changemode = () => {
-    setbgimage({ lightbgimg });
-    console.log(bgimage);
-    setdarkmode('false');
-  }
   useEffect(() => {
     document.body.style.backgroundImage = `url(${bgimage})`;
   }, [bgimage])

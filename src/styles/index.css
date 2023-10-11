@@ -316,3 +316,7 @@ body::-webkit-scrollbar {
 .ytframe>h1 {
   color: white;
 }
+
+.ytframe>form>input {
+  border-radius: 15px;
+}
