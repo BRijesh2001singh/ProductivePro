@@ -3,14 +3,13 @@ import ReactPlayer from 'react-player';
 import '../styles/index.css';
 
 const Musicplayer = (props) => {
-    console.log(props.playlistId);
+    console.log(props.songurl);
     const [yturl, setyturl] = useState('');
 
     useEffect(() => {
-        setyturl(`https://www.youtube.com/playlist?list=${props.playlistId}`);
-    }, [props.playlistId]);
-
-    if (props.playlistId === '') return <h1 style={{ color: 'white' }}>Enter Your Playlist Link</h1>;
+        setyturl(props.songurl);
+    }, [props.songurl]);
+    if (props.songurl === '') return <h1 style={{ color: 'white' }}>Enter Your Playlist Link</h1>;
 
     return (
         <div>

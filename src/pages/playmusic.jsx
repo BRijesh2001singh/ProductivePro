@@ -2,7 +2,17 @@ import Musicplayer from "../component/musicplayer";
 import { useState } from "react";
 export default function Playmusic(props) {
     const [playid, setplayid] = useState("");
-    const [playlistId, setPlaylistId] = useState("");
+    const [songurl, setsongurl] = useState("");
+    const check = (e) => {
+        e.preventDefault();
+        const playlistRegex = /youtube\.com\/playlist\?list=/i;
+        if (playlistRegex.test(playid)) {
+            extractPlaylistId(e);
+        } else {
+            setsongurl(playid);
+        }
+
+    }
     const extractPlaylistId = (e) => {
         e.preventDefault();
         const regex = /list=([A-Za-z0-9_-]+)/;
@@ -10,23 +20,22 @@ export default function Playmusic(props) {
 
         if (match) {
             const playlistId = match[1];
-            setPlaylistId(playlistId);
-        } else {
-            setPlaylistId("Playlist ID not found");
+
+            setsongurl(`https://www.youtube.com/playlist?list=${playlistId}`);
         }
 
     };
     return (
         <div className="ytcontainer">
             <div className="ytframe">
-                <form onSubmit={extractPlaylistId}>
+                <form onSubmit={check}>
                     <input
                         type="text"
                         value={playid}
                         onChange={(e) => setplayid(e.target.value)}
                     />
                     <button type="submit">submit</button>
-                    <Musicplayer playlistId={playlistId} />
+                    <Musicplayer songurl={songurl} />
                 </form>
             </div>
         </div>

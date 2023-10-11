@@ -1,0 +1,9 @@
+{
+    "functions": {
+      "yourFunctionName": {
+        "handler": "index.handler"
+      }
+    },
+    "entryPoint": "index.js"
+  }
+  
