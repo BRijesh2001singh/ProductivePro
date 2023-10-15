@@ -320,3 +320,32 @@ body::-webkit-scrollbar {
 .ytframe>form>input {
   border-radius: 15px;
 }
+
+.blocker-main-div {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.blocker-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+  margin-top: 100px;
+}
+
+.blocker-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.blocker-info>span {
+  font-size: 30px;
+  margin: 10px;
+}

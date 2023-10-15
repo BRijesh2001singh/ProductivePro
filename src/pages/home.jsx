@@ -6,6 +6,7 @@ import Navbar from './../component/navbar';
 import PomodoroTimer from '../component/pomodro';
 import darkbgimg from '../images/image.jpg'
 import Playmusic from './playmusic';
+import { Link } from 'react-router-dom';
 const Home = (props) => {
   const [settings, setsettings] = useState(false)
   const [display, setdisplay] = useState("Focus Tools");
@@ -29,6 +30,7 @@ const Home = (props) => {
   useEffect(() => {
     document.body.style.backgroundImage = `url(${bgimage})`;
   }, [bgimage])
+
   return (
     <>
       <div>
@@ -39,10 +41,9 @@ const Home = (props) => {
           <button className="setting setting-icon" onClick={showsetting}><i className="fa fa-cog" aria-hidden="true"></i></button>
           <div className={`${settingdisplay}`}>
             <button className='setting' onClick={showtimer}>{display}</button>
-            <button className='setting'><a href='https://chrome.google.com/webstore/detail/block-site-ex/nnkkgbabjapocnoedeaifoimlbejjckj/related' rel='noreferrer' target='_blank' style={{
-              fontSize: "13px",
-              fontWeight: "bold",
-            }}>Website Blocker</a></button>
+            <Link to='extension'><button className='setting'>
+              Website Blocker
+            </button></Link>
           </div>
         </div>
         <div className='home-dis'>
