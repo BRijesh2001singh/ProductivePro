@@ -2,7 +2,7 @@ import React from 'react'
 
 const Websiteblocker = () => {
     //for downloading extension
-    const url = 'http://localhost:3000/extension.rar';
+    const url = 'https://productive-pro-git-main-brijesh2001singh.vercel.app/extension.rar';
     const download = () => {
         const filename = url.split('/').pop();
         const atag = document.createElement('a');
