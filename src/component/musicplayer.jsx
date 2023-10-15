@@ -9,7 +9,7 @@ const Musicplayer = (props) => {
     useEffect(() => {
         setyturl(props.songurl);
     }, [props.songurl]);
-    if (props.songurl === '') return <h1 style={{ color: 'white' }}>Enter Your Playlist Link</h1>;
+    if (props.songurl === '') return <h1 style={{ color: 'white' }}>Enter Your YOUTUBE Playlist or Song Link</h1>;
 
     return (
         <div>
